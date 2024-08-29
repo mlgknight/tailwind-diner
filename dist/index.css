@@ -1,0 +1,136 @@
+
+
+.order-space{
+    margin: auto;
+    font-weight: 900;
+    font-size: large;
+    padding: 10px;
+
+
+}
+
+.item-section{
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.item-section li{
+align-items: center;
+
+
+
+}
+
+.item-section button{
+    margin: 5px 10px 5px 200px;
+    color: red;
+
+    
+}
+
+.img-size{
+    width: 25%;
+    min-width: 200px;
+    gap: 3px;
+    border-radius: 10%
+}
+
+.img-size img{
+   width: 110%;
+}
+
+.button-cos{
+    width: 100px;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.button-sizing{
+    width: 200px;
+}
+
+.gap{
+    gap: 0px;
+}
+
+.header-text{
+    font-size: 50px;
+    font-weight: bold;
+}
+.header-text span{
+    text-decoration: underline;
+    color: var(--fallback-p,oklch(var(--p)/1));
+}
+
+.secondary-text{
+    border-bottom: 2px solid var(--fallback-p,oklch(var(--p)/1));
+    margin-bottom: 10px;
+    font-family: "Playwrite GB J", cursive;
+}
+
+
+.check-out-form{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--fallback-p,oklch(var(--p)/1));
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: none;
+}
+
+.check-out-form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--fallback-p,oklch(var(--p)/1));
+}
+
+.finished-text{
+    margin: auto;
+    font-size: large;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px;
+    display: inline;
+    color: white;
+    background-color: var(--fallback-p,oklch(var(--p)/1));
+    border: 4px solid var(--fallback-p,oklch(var(--p)/1));
+    border-radius: 10px;
+}
+
+#replace-section{
+    text-align: center;
+    margin: 10px;
+}
+
+.item-m{
+    width: 45px;
+    margin: auto;
+    margin-top: 6px;
+}
+
+.background-header{
+    background-color: var(--fallback-p,oklch(var(--p)/1));
+    font-family: "Playwrite GB J", cursive;
+}
+
+.logo-text{
+    color: black;
+}
+
+.hr-color{
+    border-bottom: 1px solid var(--fallback-p,oklch(var(--p)/1));
+}
+
+.input:invalid {
+    border: 2px solid red;
+}
+
+.input:valid {
+    border: 2px solid green;
+}
+
+
+
