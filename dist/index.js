@@ -147,7 +147,6 @@ function handleTotalprice(){
 
     localStorage.setItem('totalPriceVariable', JSON.stringify(totalPrice));
     const storedPriceTotal = localStorage.getItem('totalPriceVariable');
-    console.log(storedPriceTotal);
     return storedPriceTotal;
 }
 
@@ -155,7 +154,6 @@ function payFunction(){
 
     const form = document.querySelector('form');
     const input = document.querySelector('input');
-    console.log(input)
     if(orderesArray.length >= 1){
     changeForm.addEventListener('submit', function(event) { 
         event.preventDefault();
