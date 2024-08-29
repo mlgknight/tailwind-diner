@@ -3,7 +3,7 @@ import { menuArray } from "/dist/data.js";
 
 // program based variables
 
-let orderesArray = []
+let ordersArray = []
 const changeForm = document.getElementById("checkout-form")
 const checkOutSection = document.getElementById("replace-section")
 // To render localstorage data
@@ -26,7 +26,6 @@ document.addEventListener("click", function(e){
         payFunction()
     } else if (e.target.dataset.payDone){
         payFunction()
-        localStorage.clear()
     }
 });
 
@@ -62,13 +61,13 @@ function themeController (){
 // local storage functions
 
 function saveOrdersToLocalStorage() {
-    localStorage.setItem('orderesArray', JSON.stringify(orderesArray)); 
+    localStorage.setItem('ordersArray', JSON.stringify(ordersArray)); 
 }
 
 function loadOrdersFromLocalStorage() {
-    const storedOrders = localStorage.getItem('orderesArray');
+    const storedOrders = localStorage.getItem('ordersArray');
     if (storedOrders) {
-        orderesArray = JSON.parse(storedOrders);
+        ordersArray = JSON.parse(storedOrders);
     }
 }
 
@@ -82,7 +81,7 @@ function handleAddClick(dataID) {
         return item.id === Number(dataID);
     })[0];
 
-    const noDoubleItem = orderesArray.find(item => item.id === Number(dataID))
+    const noDoubleItem = ordersArray.find(item => item.id === Number(dataID))
 
     if (noDoubleItem){
         noDoubleItem.quantity += 1
@@ -95,7 +94,7 @@ function handleAddClick(dataID) {
             quantity: 1
             
         }
-        orderesArray.push(itemObject)
+        ordersArray.push(itemObject)
         saveOrdersToLocalStorage()
 
     }
@@ -110,14 +109,14 @@ function handleAddClick(dataID) {
 
 
 function handleRemoveClick(dataID){
-    const index = orderesArray.findIndex(item => item.id === Number(dataID));
+    const index = ordersArray.findIndex(item => item.id === Number(dataID));
     const elementToRemove = document.getElementById(`item-${dataID}`);
 
     const currentData = menuArray.filter(item => {
         return item.id === Number(dataID);
     })[0];
 
-    const reduceItem = orderesArray.find(item => item.id === Number(dataID))
+    const reduceItem = ordersArray.find(item => item.id === Number(dataID))
 
         changeForm.style.display = "none"
 
@@ -127,7 +126,7 @@ function handleRemoveClick(dataID){
             if (elementToRemove){
                 elementToRemove.remove
             }
-            orderesArray.splice(index, 1)
+            ordersArray.splice(index, 1)
     
         } else {reduceItem.quantity > 1
             reduceItem.quantity -- 
@@ -141,7 +140,7 @@ function handleRemoveClick(dataID){
 // checkout focused Functions
 
 function handleTotalprice(){
-    const totalPrice = orderesArray.reduce((total, currentItem) => {
+    const totalPrice = ordersArray.reduce((total, currentItem) => {
         return total + currentItem.price;
     }, 0)
 
@@ -152,16 +151,15 @@ function handleTotalprice(){
 
 function payFunction(){
 
-    const form = document.querySelector('form');
-    const input = document.querySelector('input');
-    if(orderesArray.length >= 1){
+    if(ordersArray.length >= 1){
     changeForm.addEventListener('submit', function(event) { 
         event.preventDefault();
         orderDone()
 })
 
 
-    localStorage.clear()
+    localStorage.removeItem("ordersArray")
+    localStorage.removeItem("totalPriceVariable")
         changeForm.style.display = "flex"
 
     
@@ -225,7 +223,7 @@ function createMenuHtml(){
 function createCheckoutHtml(){
     let htmlCreator = ``;
 
-    orderesArray.forEach(function(item){
+    ordersArray.forEach(function(item){
 
         const {name, price, id, quantity} = item
 
