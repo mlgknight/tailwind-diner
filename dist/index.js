@@ -173,10 +173,11 @@ function payFunction(){
 }
 
 function orderDone(){
+    const UserName = document.getElementById("user-name").value
     changeForm.style.display = "none"
     checkOutSection.innerHTML = `
                             <div class="flex flex-col items-center">
-                                <p class="finished-text "> Your Order Is on The Way!</p>
+                                <p class="finished-text ">Thank You! ${UserName}, Your Order Is on The Way!</p>
                                 <button class=" button-sizing check-out btn btn-primary" onClick="window.location.reload();">New Order?</button>
                             </div>
                                 `
