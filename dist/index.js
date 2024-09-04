@@ -26,6 +26,8 @@ document.addEventListener("click", function(e){
         payFunction()
     } else if (e.target.dataset.payDone){
         payFunction()
+    } else if (e.target.dataset.payClose){
+        handleFormClose()
     }
 });
 
@@ -138,6 +140,10 @@ function handleRemoveClick(dataID){
 
 
 // checkout focused Functions
+
+function handleFormClose(){
+    changeForm.style.display = "none"
+}
 
 function handleTotalprice(){
     const totalPrice = ordersArray.reduce((total, currentItem) => {

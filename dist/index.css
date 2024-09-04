@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 
 .order-space{
     margin: auto;
@@ -42,7 +44,11 @@ align-items: center;
 .button-cos{
     width: 100px;
     border-radius: 20px;
-    border: 3px solid white;
+}
+
+.button-cos, .btn-close {
+    box-shadow: 1px 1px;
+    border: 1px solid #ffff;
 }
 
 .button-sizing{
@@ -130,6 +136,15 @@ align-items: center;
 
 .input:valid {
     border: 0.125rem solid green;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    border-radius: 100%;
+    box-shadow: 1px 1px;
+    border: 1px solid #ffff;
 }
 
 
