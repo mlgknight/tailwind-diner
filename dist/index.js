@@ -177,13 +177,12 @@ function orderDone(){
     changeForm.style.display = "none"
     checkOutSection.innerHTML = `
                             <div class="flex flex-col items-center">
-                                <p class="finished-text ">Thank You! ${UserName}, Your Order Is on The Way!</p>
+                                <p class="  max-w-72 finished-text ">Thank you, ${UserName}! Your order is on its way. We appreciate your business and hope you enjoy your purchase!</p>
                                 <button class=" button-sizing check-out btn btn-primary" onClick="window.location.reload();">New Order?</button>
                             </div>
                                 `
 
 }
-
 
 
 
