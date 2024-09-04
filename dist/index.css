@@ -85,6 +85,8 @@ align-items: center;
     height: 18.75rem;
     border-radius: 1.25rem;
     display: none;
+    box-shadow: 1px 1px;
+    border: 2px solid #ffff; 
 }
 
 .check-out-form input{
@@ -136,6 +138,13 @@ align-items: center;
 
 .input:valid {
     border: 0.125rem solid green;
+}
+
+.input:focus {
+    font-family: inherit;
+    color: var(--fallback-p,oklch(var(--p)/1));
+    border: none;
+    outline: none;
 }
 
 .btn-close {
